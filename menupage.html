@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menupage</title>
+  <style>
+    body { 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      height: 100vh; 
+      flex-direction: column; 
+      background-image: url('image/background.jpg'); 
+      background-size: cover; 
+    }
+    button { 
+      margin: 10px; 
+      padding: 10px 20px; 
+      font-size: 16px; 
+      background-size: contain;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-image {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center; 
+      position: absolute; /* added */
+      width: 75px;
+      height: 75px;
+    }
+    .soft .btn-image {
+      background-image: url('image/egg_soft.png');
+      top: 280px; 
+      left: 500px; /* adjusted position */
+    }
+    .medium .btn-image {
+      background-image: url('image/egg_medium.png');
+      top: 280px; 
+      left: 700px; /* adjusted position */
+    }
+    .hard .btn-image {
+      background-image: url('image/egg_hard.png');
+      top: 430px; 
+      left: 500px; /* adjusted position */
+    }
+    .extrahard .btn-image {
+      background-image: url('image/egg_extrahard.png');
+      top: 430px; 
+      left: 700px; /* adjusted position */
+    }
+    .btn-span {
+      position: absolute; /* or use absolute depending on your needs */
+      top: 0;
+      left: 0; /* initial position, adjust as needed */
+      transform: translate(-50%, -50%); /* adjust positioning */
+      color: rgb(0, 0, 0); /* adjust text color */
+    }
+  </style>
+</head>
+<body>
+  <h1>What are you making?</h1>
+  <button class="soft" onclick="startTimer('soft')">
+    <div class="btn-image"></div>
+    <span class="btn-span" style="top: 380px; left: 540px;">Soft</span>
+  </button>
+  <button class="medium" onclick="startTimer('medium')">
+    <div class="btn-image"></div>
+    <span class="btn-span" style="top: 380px; left: 740px;">Medium</span>
+  </button>
+  <button class="hard" onclick="startTimer('hard')">
+    <div class="btn-image"></div>
+    <span class="btn-span" style="top: 500px; left: 540px;">Hard</span>
+  </button>
+  <button class="extrahard" onclick="startTimer('extrahard')">
+    <div class="btn-image"></div>
+    <span class="btn-span" style="top: 500px; left: 740px;">Extra Hard</span>
+  </button>
+
+  <script>
+    function startTimer(type) {
+      let time;
+      switch (type) {
+        case 'soft':
+          time = 3;
+          break;
+        case 'medium':
+          time = 5;
+          break;
+        case 'hard':
+          time = 7;
+          break;
+        case 'extrahard':
+          time = 0.1;
+          break;
+      }
+      window.location.href = `timerpage.html?time=${time}`;
+    }
+  </script>
+</body>
+</html>

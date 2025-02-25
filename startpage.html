@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Startpage</title>
+  <style>
+    body { 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      height: 100vh; 
+      background-image: url('image/background.jpg'); 
+      background-size: cover; 
+    }
+    button { 
+      width: 150px;
+      height: 150px;
+      background-image: url('image/egg_start.png');
+      background-size: cover;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Let's time your egg</h1>
+    <button onclick="start()"></button>
+  </div>
+  <script>
+    function start() {
+      window.location.href = 'menupage.html';
+    }
+  </script>
+</body>
+</html>

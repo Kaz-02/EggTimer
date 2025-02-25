@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timerpage</title>
+  <style>
+    body { 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      height: 100vh; 
+      flex-direction: column; 
+      background-image: url('image/background.jpg'); 
+      background-size: cover; 
+    }
+    h1 { 
+      font-size: 48px; 
+      background-color: rgba(255, 255, 255, 0.8); 
+      padding: 10px; 
+    }
+  </style>
+</head>
+<body>
+  <h1 id="countdown">0:00</h1>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const time = urlParams.get('time');
+    let minutes = parseInt(time);
+    let seconds = 0;
+    const countdownElement = document.getElementById('countdown');
+
+    function updateCountdown() {
+      if (seconds === 0) {
+        if (minutes === 0) {
+          window.location.href = 'closepage.html';
+          return;
+        } else {
+          minutes--;
+          seconds = 59;
+        }
+      } else {
+        seconds--;
+      }
+
+      countdownElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+      setTimeout(updateCountdown, 1000);
+    }
+    updateCountdown();
+  </script>
+</body>
+</html>
