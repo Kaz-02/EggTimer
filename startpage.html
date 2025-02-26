@@ -19,18 +19,32 @@
       background-color: transparent;
       border: none;
       cursor: pointer;
+      display: block;
+      margin: 0 auto;
+    }
+    .button-text{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: monogram, monospace;
+      font-size: 32px;
+      color: black;
+      text-align: center;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <div>
+  <div class="container">
     <h1>Let's time your egg</h1>
     <button onclick="start()"></button>
+    <div class="button-text">Start</div>
   </div>
   <script>
     function start() {
       window.location.href = 'menupage.html';
     }
+    document.querySelector('.button-text').addEventListener('click', start);
   </script>
 </body>
 </html>
